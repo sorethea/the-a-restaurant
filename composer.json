@@ -1,0 +1,21 @@
+{
+    "name": "sorethea/the-a-restaurant",
+    "description": "Filament plugin for restaurant",
+    "type": "plugin",
+    "require": {
+        "sorethea/core": "dev-main"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sorethea\\TheARestaurant\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sorethea OK",
+            "email": "sorethea@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
