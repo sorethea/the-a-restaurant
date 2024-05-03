@@ -1,6 +1,6 @@
 <?php
 
-namespace Sorethea\TheARestaurant;
+namespace Sorethea\Restaurant;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;

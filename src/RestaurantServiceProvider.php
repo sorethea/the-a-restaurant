@@ -1,6 +1,6 @@
 <?php
 
-namespace Sorethea\TheARestaurant;
+namespace Sorethea\Restaurant;
 
 use Illuminate\Support\ServiceProvider;
 use Spatie\LaravelPackageTools\Package;
