@@ -1,5 +1,5 @@
 {
-    "name": "sorethea/the-a-restaurant",
+    "name": "sorethea/restaurant",
     "description": "Filament plugin for restaurant",
     "type": "plugin",
     "require": {
