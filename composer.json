@@ -14,7 +14,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sorethea\\Restaurant\\AutRestaurantServiceProvider",
+                "Sorethea\\Restaurant\\AuthRestaurantServiceProvider",
                 "Sorethea\\Restaurant\\RestaurantServiceProvider"
             ]
         }
