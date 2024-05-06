@@ -106,6 +106,6 @@ class RestaurantResource extends Resource implements HasShieldPermissions
 
     public static function getNavigationGroup(): ?string
     {
-        return trans('restaurant.restaurant.plural');
+        return trans('restaurant::restaurant.plural');
     }
 }
