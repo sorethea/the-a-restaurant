@@ -15,7 +15,7 @@ class CuisineResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = Cuisine::class;
 
-    public static function getNavigationIcon(): string|Htmlable|null
+    public static function getNavigationIcon(): string
     {
         return config("restaurant.icons.cuisine");
     }

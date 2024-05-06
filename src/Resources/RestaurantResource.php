@@ -15,7 +15,7 @@ class RestaurantResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = Restaurant::class;
 
-    public static function getNavigationIcon(): string|Htmlable|null
+    public static function getNavigationIcon(): string
     {
         return config("restaurant.icons.restaurant");
     }
