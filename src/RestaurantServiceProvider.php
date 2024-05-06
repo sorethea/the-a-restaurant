@@ -24,6 +24,8 @@ class RestaurantServiceProvider extends PackageServiceProvider
         if (! app()->configurationIsCached()) {
             $this->mergeConfigFrom(__DIR__.'/../config/restaurant.php', 'restaurant');
         }
+
+        $this->loadTranslationsFrom(__DIR__.'/../lang','restaurant');
     }
 
     public function boot(): void
@@ -32,5 +34,8 @@ class RestaurantServiceProvider extends PackageServiceProvider
         $this->publishes([
             __DIR__.'/../config/restaurant.php' => config_path('restaurant.php'),
         ], 'restaurant-config');
+        $this->publishes([
+            __DIR__.'/../lang' => lang_path('restaurant'),
+        ], 'restaurant-translations');
     }
 }
