@@ -17,7 +17,7 @@ class RestaurantResource extends Resource implements HasShieldPermissions
 
     public static function getNavigationIcon(): string|Htmlable|null
     {
-        return config("the-a-restaurant.icons.restaurant");
+        return config("restaurant.icons.restaurant");
     }
 
     public static function form(Form $form): Form
