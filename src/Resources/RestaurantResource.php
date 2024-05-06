@@ -2,6 +2,7 @@
 
 namespace Sorethea\Restaurant\Resources;
 
+use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -10,7 +11,7 @@ use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Sorethea\Restaurant\Models\Restaurant;
 
-class RestaurantResource extends Resource
+class RestaurantResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = Restaurant::class;
 
@@ -89,5 +90,22 @@ class RestaurantResource extends Resource
             'create' => \Sorethea\Restaurant\Resources\RestaurantResource\Pages\CreateRestaurant::route('/create'),
             'edit' => \Sorethea\Restaurant\Resources\RestaurantResource\Pages\EditRestaurant::route('/{record}/edit'),
         ];
+    }
+
+    public static function getPermissionPrefixes(): array
+    {
+        return [
+            'view',
+            'view_any',
+            'create',
+            'update',
+            'delete',
+            'delete_any',
+        ];
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return trans('restaurant.restaurant.plural');
     }
 }
