@@ -11,6 +11,14 @@
             "Sorethea\\Restaurant\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sorethea\\Restaurant\\AutRestaurantServiceProvider",
+                "Sorethea\\Restaurant\\RestaurantServiceProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "Sorethea OK",
