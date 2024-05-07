@@ -30,7 +30,7 @@ class CuisineResource extends Resource implements HasShieldPermissions
                         ->maxLength(255),
                     Forms\Components\FileUpload::make('image')
                         ->image()
-                        ->multiple()
+                        ->default(fn($record)=>$record->getFilamentAvatarUrl())
                         ->default(null),
                     Forms\Components\Textarea::make('description')
                         ->columnSpanFull(),
