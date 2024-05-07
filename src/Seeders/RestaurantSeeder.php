@@ -13,7 +13,7 @@ class RestaurantSeeder extends Seeder
         $cuisines = \File::json(__DIR__."/../cuisines.json");
         foreach ($cuisines as $cuisine){
             $file = file_get_contents($cuisine["image"]);
-
+            $fileName = '';
             if(!empty($file)){
                 $finfo = new \finfo(FILEINFO_MIME_TYPE);
                 $fileInfo = $finfo->buffer($file);
