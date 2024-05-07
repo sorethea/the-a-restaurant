@@ -5,31 +5,52 @@ namespace Sorethea\Restaurant\Seeders;
 use GuzzleHttp\Client;
 use Illuminate\Database\Seeder;
 use Sorethea\Restaurant\Models\Cuisine;
+use Sorethea\Restaurant\Models\Restaurant;
 
 class RestaurantSeeder extends Seeder
 {
     public function run(): void
     {
-        $cuisines = \File::json(__DIR__."/../cuisines.json");
-        foreach ($cuisines as $cuisine){
-            $fileName="";
-            try {
-                $file = file_get_contents($cuisine["image"]);
-                if($file){
-                    $finfo = new \finfo(FILEINFO_MIME_TYPE);
-                    $fileInfo = $finfo->buffer($file);
-                    $extension = pathinfo($fileInfo, PATHINFO_EXTENSION);
-                    $fileName = uniqid().".".$extension;
-                    \Storage::disk("local")->put($fileName,$file);
-                }
-            }catch (\Exception $exception){
-                logger($exception->getMessage());
-            }
-            Cuisine::factory(1)->create([
-                "name"=>$cuisine['name'],
-                "description"=>$cuisine['description'],
-                "image"=>$fileName
+        $cuisines = [
+            "Khmer" => [
+                "Romdeng",
+                "Malis Restaurant",
+                "Marum",
+                "Madame Butterfly",
+                "Meta House Garden Restaurant"
+            ],
+            "Chinese" => [
+                "Dragon Palace Restaurant",
+                "Golden Crown Restaurant",
+                "Ho Choi",
+                "Joy Luck Club",
+                "Majestic Restaurant"
+            ],
+            "Japanese" => [
+                "Sushi Hokkaido",
+                "Sushi Zanmai",
+                "Sora Sky Japanese Restaurant",
+                "Wasabi Phnom Penh",
+                "Yakiniku Don Don"
+            ],
+            "Italian" => [
+                "Il Porcellino d'Oro",
+                "La Pasta",
+                "Mamma Mia",
+                "Napolitana Pizzeria",
+                "Picasso Italian Restaurant"
+            ]
+        ];
+        foreach ($cuisines as $cuisineName=>$restaurants){
+            $cuisine = Cuisine::factory(1)->create([
+                "name"=>$cuisineName,
             ]);
+            foreach ($restaurants as $restaurant){
+                Restaurant::factory(1)->create([
+                   "name"=>$restaurant,
+                   "cuisine_id" => $cuisine->id,
+                ]);
+            }
         }
     }
 }
