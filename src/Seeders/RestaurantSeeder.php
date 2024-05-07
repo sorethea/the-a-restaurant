@@ -12,9 +12,9 @@ class RestaurantSeeder extends Seeder
         $cuisines = \File::json(__DIR__."/../cuisines.json");
         foreach ($cuisines as $cuisine){
             Cuisine::factory(1)->create([
-                "name"=>$cuisine->name,
-                "description"=>$cuisine->description,
-                "images"=>[$cuisine->image]
+                "name"=>$cuisine['name'],
+                "description"=>$cuisine['description'],
+                "images"=>[$cuisine['image']]
             ]);
         }
     }
