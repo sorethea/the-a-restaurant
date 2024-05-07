@@ -29,8 +29,9 @@ class CuisineResource extends Resource implements HasShieldPermissions
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('images')
-                    ->maxLength(255)
+                Forms\Components\FileUpload::make('images')
+                    ->image()
+                    ->multiple()
                     ->default(null),
             ]);
     }
@@ -41,7 +42,7 @@ class CuisineResource extends Resource implements HasShieldPermissions
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('images')
+                Tables\Columns\ImageColumn::make('images')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
