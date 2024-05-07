@@ -14,12 +14,12 @@ class Cuisine extends Model implements HasAvatar
     protected $fillable =[
         "name",
         "description",
-        "images",
+        "image",
     ];
     protected $casts =[
         "name"=>"string",
         "description"=>"string",
-        "images"=>"array",
+        "image"=>"string",
     ];
 
     protected static function newFactory(): CuisineFactory
@@ -29,8 +29,8 @@ class Cuisine extends Model implements HasAvatar
 
     public function getFilamentAvatarUrl(): ?string
     {
-        return !empty($this->images) && is_array($this->images)
-            ?$this->images[0]
+        return !empty($this->image) && !is_null($this->image)
+            ?$this->image
             :config("filament-avatar.providers.ui-avatar.url")."?name=".urlencode($this->name);
     }
 }
