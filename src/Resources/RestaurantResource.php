@@ -24,21 +24,22 @@ class RestaurantResource extends Resource implements HasShieldPermissions
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('cuisine_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('logo')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\FileUpload::make('image')
-                    ->image(),
-                Forms\Components\Textarea::make('description')
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('information')
-                    ->columnSpanFull(),
+                Forms\Components\Section::make([
+                    Forms\Components\TextInput::make('name')
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\TextInput::make('cuisine_id')
+                        ->required()
+                        ->numeric(),
+                    Forms\Components\FileUpload::make('logo')
+                        ->image(),
+                    Forms\Components\FileUpload::make('image')
+                        ->image(),
+                    Forms\Components\Textarea::make('description')
+                        ->columnSpanFull(),
+                    Forms\Components\Textarea::make('information')
+                        ->columnSpanFull(),
+                ])->columns(3)
             ]);
     }
 
@@ -46,14 +47,14 @@ class RestaurantResource extends Resource implements HasShieldPermissions
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('logo')
+                    ->default(fn($record)=>$record->getFilamentAvatarUrl())
+                    ->circular(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('cuisine_id')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('logo')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

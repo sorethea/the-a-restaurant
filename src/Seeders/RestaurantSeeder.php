@@ -41,16 +41,19 @@ class RestaurantSeeder extends Seeder
                 "Picasso Italian Restaurant"
             ]
         ];
+        $i = 1;
         foreach ($cuisines as $cuisineName=>$restaurants){
-            $cuisine = Cuisine::factory(1)->create([
+            Cuisine::factory(1)->create([
+                "id"=>$i,
                 "name"=>$cuisineName,
             ]);
             foreach ($restaurants as $restaurant){
                 Restaurant::factory(1)->create([
                    "name"=>$restaurant,
-                   "cuisine_id" => $cuisine->id,
+                   "cuisine_id" => $i,
                 ]);
             }
+            $i++;
         }
     }
 }
