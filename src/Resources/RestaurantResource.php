@@ -52,7 +52,7 @@ class RestaurantResource extends Resource implements HasShieldPermissions
                     ->circular(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('cuisine_id')
+                Tables\Columns\TextColumn::make('cuisine.name')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
