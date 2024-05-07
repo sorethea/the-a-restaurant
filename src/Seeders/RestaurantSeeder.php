@@ -28,7 +28,7 @@ class RestaurantSeeder extends Seeder
             Cuisine::factory(1)->create([
                 "name"=>$cuisine['name'],
                 "description"=>$cuisine['description'],
-                "images"=>$fileName
+                "image"=>$fileName
             ]);
         }
     }

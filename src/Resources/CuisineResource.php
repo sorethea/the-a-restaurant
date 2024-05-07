@@ -28,12 +28,12 @@ class CuisineResource extends Resource implements HasShieldPermissions
                     Forms\Components\TextInput::make('name')
                         ->required()
                         ->maxLength(255),
-                    Forms\Components\Textarea::make('description')
-                        ->columnSpanFull(),
-                    Forms\Components\FileUpload::make('images')
+                    Forms\Components\FileUpload::make('image')
                         ->image()
                         ->multiple()
                         ->default(null),
+                    Forms\Components\Textarea::make('description')
+                        ->columnSpanFull(),
                 ])->columns(3)
 
             ]);
@@ -43,7 +43,7 @@ class CuisineResource extends Resource implements HasShieldPermissions
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('images')
+                Tables\Columns\ImageColumn::make('image')
                     ->default(fn($record)=>$record->getFilamentAvatarUrl())
                     ->circular(),
                 Tables\Columns\TextColumn::make('name')
