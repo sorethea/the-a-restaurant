@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Italian",
+        "description": "Fresh, regional ingredients and simple, flavorful dishes",
+        "image": "https://images.unsplash.com/photo-1585344238310-6cbf182c18fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlLW8!&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Mexican",
+        "description": "Vibrant flavors, corn tortillas, beans, chili peppers, fresh herbs",
+        "image": "https://images.unsplash.com/photo-1574423375990-9010f32c48c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlLW8!&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Japanese",
+        "description": "Fresh seafood, seasonal ingredients, presentation",
+        "image": "https://images.unsplash.com/photo-1581453190392-f0cbebb9e0f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlLW8!&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Thai",
+        "description": "Sweet, sour, salty, spicy, bitter flavors",
+        "image": "https://images.unsplash.com/photo-1589870618333-4f8c444f834e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlLW8!&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Indian",
+        "description": "Diverse regional specialties, fragrant curries, breads, rice",
+        "image": "https://images.unsplash.com/photo-1598434303142-c7f9b3c4c4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlLW8!&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Chinese",
+        "description": "Eight regional cuisines, distinct flavors, ingredients",
+        "image": "https://images.unsplash.com/photo-1570692635023-5f188e08d89a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlLW8!&auto=format&fit=crop&w=800&q=80"
+    }
+]
