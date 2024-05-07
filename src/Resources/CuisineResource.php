@@ -44,6 +44,7 @@ class CuisineResource extends Resource implements HasShieldPermissions
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('images')
+                    ->default(fn($record)=>$record->getFilamentAvatarUrl())
                     ->circular(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
