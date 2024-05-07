@@ -15,13 +15,14 @@ class RestaurantSeeder extends Seeder
             try {
                 $file = file_get_contents($cuisine["image"]);
                 if ($file === false){
-                    abort(404,"Image not found!");
+                    $fileName="";
+                }else{
+                    $finfo = new \finfo(FILEINFO_MIME_TYPE);
+                    $fileInfo = $finfo->buffer($file);
+                    $extension = pathinfo($fileInfo, PATHINFO_EXTENSION);
+                    $fileName = uniqid().".".$extension;
+                    \Storage::disk("local")->put($fileName,$file);
                 }
-                $finfo = new \finfo(FILEINFO_MIME_TYPE);
-                $fileInfo = $finfo->buffer($file);
-                $extension = pathinfo($fileInfo, PATHINFO_EXTENSION);
-                $fileName = uniqid().".".$extension;
-                \Storage::disk("local")->put($fileName,$file);
                 Cuisine::factory(1)->create([
                     "name"=>$cuisine['name'],
                     "description"=>$cuisine['description'],
