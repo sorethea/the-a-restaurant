@@ -12,18 +12,16 @@ class RestaurantSeeder extends Seeder
     {
         $cuisines = \File::json(__DIR__."/../cuisines.json");
         foreach ($cuisines as $cuisine){
+            $fileName="";
             try {
                 $file = file_get_contents($cuisine["image"]);
-                if ($file === false){
-                    $fileName="";
-                }else{
+                if($file){
                     $finfo = new \finfo(FILEINFO_MIME_TYPE);
                     $fileInfo = $finfo->buffer($file);
                     $extension = pathinfo($fileInfo, PATHINFO_EXTENSION);
                     $fileName = uniqid().".".$extension;
                     \Storage::disk("local")->put($fileName,$file);
                 }
-
             }catch (\Exception $exception){
                 logger($exception->getMessage());
             }
