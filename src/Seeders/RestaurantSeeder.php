@@ -23,15 +23,15 @@ class RestaurantSeeder extends Seeder
                     $fileName = uniqid().".".$extension;
                     \Storage::disk("local")->put($fileName,$file);
                 }
-                Cuisine::factory(1)->create([
-                    "name"=>$cuisine['name'],
-                    "description"=>$cuisine['description'],
-                    "images"=>[$fileName]
-                ]);
+
             }catch (\Exception $exception){
                 logger($exception->getMessage());
             }
-
+            Cuisine::factory(1)->create([
+                "name"=>$cuisine['name'],
+                "description"=>$cuisine['description'],
+                "images"=>[$fileName]
+            ]);
         }
     }
 }
