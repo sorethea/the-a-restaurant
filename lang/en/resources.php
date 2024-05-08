@@ -7,6 +7,7 @@ return [
         "description"=>"Description",
         "image"=>"Image",
         "logo"=>"Logo",
+        "information"=>"Information",
     ],
     "cuisine"=>[
         "singular"=>"Cuisine",
@@ -14,6 +15,5 @@ return [
         "name"=>"Name",
         "images"=>"Images",
         "description"=>"Description",
-        "information"=>"Information",
     ],
 ];
