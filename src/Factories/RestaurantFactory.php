@@ -14,14 +14,14 @@ class RestaurantFactory extends Factory
 
     public function definition(): array
     {
-        $cuisines = Cuisine::all()->pluck('id','id')->toArray();
+        //$cuisines = Cuisine::all()->pluck('id','id')->toArray();
         return [
-            'name' => $this->generateRestaurantName(),
-            'cuisine_id' => $this->faker->randomElement($cuisines),
-            'logo' => $this->faker->imageUrl(),
-            'image' => $this->faker->imageUrl(),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+//            'name' => $this->generateRestaurantName(),
+//            'cuisine_id' => $this->faker->randomElement($cuisines),
+//            'logo' => $this->faker->imageUrl(),
+//            'image' => $this->faker->imageUrl(),
+//            'created_at' => Carbon::now(),
+//            'updated_at' => Carbon::now(),
         ];
     }
     function generateRestaurantName() {
