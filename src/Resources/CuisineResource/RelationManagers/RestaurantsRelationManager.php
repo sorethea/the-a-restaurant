@@ -16,9 +16,22 @@ class RestaurantsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\Section::make([
+                    Forms\Components\TextInput::make('name')
+                        ->label(trans("restaurant::resources.restaurant.name"))
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\Select::make('cuisine')
+                        ->relationship('cuisine','name')
+                        ->label(trans("restaurant::resources.cuisine.singular"))
+                        ->required(),
+                    Forms\Components\FileUpload::make('logo')
+                        ->label(trans("restaurant::resources.restaurant.logo"))
+                        ->image(),
+                    Forms\Components\FileUpload::make('image')
+                        ->label(trans("restaurant::resources.restaurant.image"))
+                        ->image(),
+                ])->columns(2)
             ]);
     }
 
@@ -27,7 +40,11 @@ class RestaurantsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('name')
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\ImageColumn::make('logo')
+                    ->default(fn($record)=>$record->getFilamentAvatarUrl())
+                    ->circular(),
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
             ])
             ->filters([
                 //
