@@ -34,7 +34,7 @@ class CuisineResource extends Resource implements HasShieldPermissions
                         ->default(null),
                     Forms\Components\Textarea::make('description')
                         ->columnSpanFull(),
-                ])->columns(3)
+                ])->columns(2)
 
             ]);
     }

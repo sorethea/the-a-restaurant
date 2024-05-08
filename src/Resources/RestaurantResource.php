@@ -39,7 +39,7 @@ class RestaurantResource extends Resource implements HasShieldPermissions
                         ->columnSpanFull(),
                     Forms\Components\Textarea::make('information')
                         ->columnSpanFull(),
-                ])->columns(3)
+                ])->columns(2)
             ]);
     }
 
