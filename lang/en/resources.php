@@ -14,5 +14,6 @@ return [
         "name"=>"Name",
         "images"=>"Images",
         "description"=>"Description",
+        "information"=>"Information",
     ],
 ];

@@ -26,20 +26,24 @@ class RestaurantResource extends Resource implements HasShieldPermissions
             ->schema([
                 Forms\Components\Section::make([
                     Forms\Components\TextInput::make('name')
-                        ->label(trans("restaurant::resource.restaurant.name"))
+                        ->label(trans("restaurant::resources.restaurant.name"))
                         ->required()
                         ->maxLength(255),
                     Forms\Components\Select::make('cuisine')
                         ->relationship('cuisine','name')
-                        ->label(trans("restaurant::resource.cuisine.singular"))
+                        ->label(trans("restaurant::resources.cuisine.singular"))
                         ->required(),
                     Forms\Components\FileUpload::make('logo')
+                        ->label(trans("restaurant::resources.restaurant.logo"))
                         ->image(),
                     Forms\Components\FileUpload::make('image')
+                        ->label(trans("restaurant::resources.restaurant.image"))
                         ->image(),
                     Forms\Components\Textarea::make('description')
+                        ->label(trans("restaurant::resources.restaurant.description"))
                         ->columnSpanFull(),
                     Forms\Components\Textarea::make('information')
+                        ->label(trans("restaurant::resources.restaurant.information"))
                         ->columnSpanFull(),
                 ])->columns(2)
             ]);
