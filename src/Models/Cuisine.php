@@ -6,6 +6,7 @@ use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel\Concerns\HasAvatars;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Sorethea\Restaurant\Factories\CuisineFactory;
 
 class Cuisine extends Model implements HasAvatar
@@ -27,6 +28,10 @@ class Cuisine extends Model implements HasAvatar
         return new CuisineFactory;
     }
 
+    public function restaurants(): HasMany
+    {
+        return $this->hasMany(Restaurant::class);
+    }
     public function getFilamentAvatarUrl(): ?string
     {
         return !empty($this->image) && !is_null($this->image)

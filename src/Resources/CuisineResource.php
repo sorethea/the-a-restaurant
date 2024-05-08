@@ -10,6 +10,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Sorethea\Restaurant\Models\Cuisine;
+use Sorethea\Restaurant\Resources\CuisineResource\RelationManagers\RestaurantsRelationManager;
 
 class CuisineResource extends Resource implements HasShieldPermissions
 {
@@ -76,7 +77,7 @@ class CuisineResource extends Resource implements HasShieldPermissions
     public static function getRelations(): array
     {
         return [
-            //
+            RestaurantsRelationManager::class,
         ];
     }
 
