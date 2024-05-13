@@ -4,6 +4,7 @@ namespace Sorethea\Restaurant\Seeders;
 
 use GuzzleHttp\Client;
 use Illuminate\Database\Seeder;
+use Sorethea\Restaurant\Models\Category;
 use Sorethea\Restaurant\Models\Cuisine;
 use Sorethea\Restaurant\Models\Restaurant;
 
@@ -41,6 +42,24 @@ class RestaurantSeeder extends Seeder
                 "Picasso Italian Restaurant"
             ]
         ];
+        $foodCategories = array(
+            "Fruits",
+            "Vegetables",
+            "Grains",
+            "Protein (Meat, Poultry, Fish)",
+            "Dairy",
+            "Eggs",
+            "Fats & Oils",
+            "Nuts & Seeds",
+            "Legumes & Beans",
+            "Spices & Herbs"
+        );
+        foreach ($foodCategories as $k=>$category){
+            Category::factory(1)->create([
+                "id"=>$k+1,
+                "name"=>$category,
+            ]);
+        }
         $i = 1;
         foreach ($cuisines as $cuisineName=>$restaurants){
             Cuisine::factory(1)->create([
