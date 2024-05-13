@@ -16,6 +16,20 @@ return [
         "images"=>"Images",
         "description"=>"Description",
     ],
+    "category"=>[
+        "singular"=>"Category",
+        "plural"=>"Categories",
+        "name"=>"Name",
+        "image"=>"Image",
+    ],
+    "extra"=>[
+        "singular"=>"Extra",
+        "plural"=>"Extras",
+        "name"=>"Name",
+        "group"=>"Group",
+        "price"=>"Price",
+        "image"=>"Image",
+    ],
     "branch"=>[
         "singular"=>"Branch",
         "plural"=>"Branches",
