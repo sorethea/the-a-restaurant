@@ -2,6 +2,7 @@
 
 namespace Sorethea\Restaurant\Resources;
 
+use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -9,7 +10,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Sorethea\Restaurant\Models\Category;
 
-class CategoryResource extends Resource
+class CategoryResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = Category::class;
 
