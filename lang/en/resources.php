@@ -16,4 +16,13 @@ return [
         "images"=>"Images",
         "description"=>"Description",
     ],
+    "branch"=>[
+        "singular"=>"Branch",
+        "plural"=>"Branches",
+        "name"=>"Name",
+        "longitude"=>"Longitude",
+        "latitude"=>"Latitude",
+        "address"=>"Address",
+        "contact"=>"Contact",
+    ],
 ];
