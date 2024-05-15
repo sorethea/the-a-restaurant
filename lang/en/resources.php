@@ -39,4 +39,13 @@ return [
         "address"=>"Address",
         "contact"=>"Contact",
     ],
+    "price"=>[
+        "singular"=>"Price",
+        "plural"=>"Prices",
+        "name"=>"Name",
+        "price_group"=>"Group",
+        "price"=>"Price",
+        "is_default"=>"Default",
+    ],
+
 ];

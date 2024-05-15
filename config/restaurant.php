@@ -5,6 +5,5 @@ return [
         "cuisine"=>"heroicon-o-bars-4",
         "category"=>"heroicon-o-list-bullet",
         "price"=>"heroicon-o-currency-dollar",
-        "priceGroup"=>"heroicon-o-inbox-stack",
     ]
 ];
