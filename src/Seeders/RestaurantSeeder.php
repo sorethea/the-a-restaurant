@@ -13,66 +13,65 @@ class RestaurantSeeder extends Seeder
     public function run(): void
     {
         $cuisines = [
-            "Khmer" => [
-                "Romdeng",
-                "Malis Restaurant",
-                "Marum",
-                "Madame Butterfly",
-                "Meta House Garden Restaurant"
+            "Fast Food"=>[
+                "Carl's Jr."=>[
+                    "TASTY SNACK COMBO",
+                    "SIDES",
+                    "JUNIOR BURGERS",
+                    "HAPPY STAR MEALS",
+                    "HAND-BREADED CHICKEN LEGS & WINGS",
+                    "HAND-BREADED CHICKEN",
+                    "GUACAMOLE FAMILY",
+                    "DESSERTS & DRINKS",
+                    "CHARGRILLED DOUBLE BURGERS",
+                    "CHARGRILLED CHICKEN",
+                    "CHARGRILLED BURGERS",
+                    "ALL STAR MEALS",
+                ],
+                "Texas Chicken"=>[
+                    "TEXAS WRAP SET",
+                    "TEXAS WRAP",
+                    "TEXAS RICE",
+                    "TEXAS BURGER",
+                    "TASTY SNACK COMBO",
+                    "STAR BOX COMBO",
+                    "SIDES",
+                    "RICE DISH",
+                    "FAMILY COMBO",
+                    "DRINKS",
+                    "DESSERT",
+                    "CRUNCHY DEAL",
+                    "CHICKEN SNACK",
+                    "BURGER SET",
+                    "BONE-IN FRIED CHICKEN",
+                    "BEVERAGE",
+
+                ],
             ],
-            "Chinese" => [
-                "Dragon Palace Restaurant",
-                "Golden Crown Restaurant",
-                "Ho Choi",
-                "Joy Luck Club",
-                "Majestic Restaurant"
-            ],
-            "Japanese" => [
-                "Sushi Hokkaido",
-                "Sushi Zanmai",
-                "Sora Sky Japanese Restaurant",
-                "Wasabi Phnom Penh",
-                "Yakiniku Don Don"
-            ],
-            "Italian" => [
-                "Il Porcellino d'Oro",
-                "La Pasta",
-                "Mamma Mia",
-                "Napolitana Pizzeria",
-                "Picasso Italian Restaurant"
-            ]
         ];
-        $foodCategories = array(
-            "Fruits",
-            "Vegetables",
-            "Grains",
-            "Protein (Meat, Poultry, Fish)",
-            "Dairy",
-            "Eggs",
-            "Fats & Oils",
-            "Nuts & Seeds",
-            "Legumes & Beans",
-            "Spices & Herbs"
-        );
-        foreach ($foodCategories as $k=>$category){
-            Category::factory(1)->create([
-                "id"=>$k+1,
-                "name"=>$category,
-            ]);
-        }
-        $i = 1;
+
+        $c=1;
+        $r=1;
         foreach ($cuisines as $cuisineName=>$restaurants){
             Cuisine::factory(1)->create([
-                "id"=>$i,
+                "id"=>$c,
                 "name"=>$cuisineName,
             ]);
-            foreach ($restaurants as $restaurant){
+            foreach ($restaurants as $restaurant=>$categories){
                 Restaurant::factory(1)->create([
-                   "name"=>$restaurant,
-                   "cuisine_id" => $i,
+                    "id"=>$r,
+                    "name"=>$restaurant,
+                    "cuisine_id" => $c,
                 ]);
+                foreach ($categories as $category){
+                    Category::factory(1)->create([
+                        "name"=>$category,
+                        "restaurant_id" => $r,
+                    ]);
+                }
+                $r ++;
             }
-            $i++;
+            $c++;
         }
     }
 }

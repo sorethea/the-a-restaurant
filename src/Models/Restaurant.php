@@ -3,12 +3,17 @@
 namespace Sorethea\Restaurant\Models;
 
 use Filament\Models\Contracts\HasAvatar;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Sorethea\Restaurant\Factories\RestaurantFactory;
+use Sorethea\Restaurant\Observers\RestaurantObserver;
 
+#[ObservedBy([
+    RestaurantObserver::class,
+])]
 class Restaurant extends Model implements HasAvatar
 {
     use HasFactory;
@@ -33,6 +38,10 @@ class Restaurant extends Model implements HasAvatar
     public function branches(): HasMany
     {
         return $this->hasMany(Branch::class);
+    }
+    public function priceGroups(): HasMany
+    {
+        return $this->hasMany(PriceGroup::class);
     }
     public function getFilamentAvatarUrl(): ?string
     {

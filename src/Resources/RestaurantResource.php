@@ -10,6 +10,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Sorethea\Restaurant\Models\Restaurant;
+use Sorethea\Restaurant\Resources\RestaurantResource\RelationManagers\PriceGroupRelationManager;
 
 class RestaurantResource extends Resource implements HasShieldPermissions
 {
@@ -86,7 +87,7 @@ class RestaurantResource extends Resource implements HasShieldPermissions
     public static function getRelations(): array
     {
         return [
-            //
+            PriceGroupRelationManager::class
         ];
     }
 
