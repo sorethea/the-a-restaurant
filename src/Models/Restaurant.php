@@ -39,10 +39,6 @@ class Restaurant extends Model implements HasAvatar
     {
         return $this->hasMany(Branch::class);
     }
-    public function priceGroups(): HasMany
-    {
-        return $this->hasMany(PriceGroup::class);
-    }
     public function getFilamentAvatarUrl(): ?string
     {
         return !empty($this->logo) && !is_null($this->logo)

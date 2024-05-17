@@ -9,10 +9,7 @@ class RestaurantObserver
 {
     public function created(Restaurant $restaurant): void
     {
-        $restaurant->priceGroups()->create([
-           "name"=>"Standard",
-           "is_default"=>true,
-        ]);
+
     }
 
     public function updated(Restaurant $restaurant): void

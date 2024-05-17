@@ -87,7 +87,7 @@ class RestaurantResource extends Resource implements HasShieldPermissions
     public static function getRelations(): array
     {
         return [
-            PriceGroupRelationManager::class
+
         ];
     }
 

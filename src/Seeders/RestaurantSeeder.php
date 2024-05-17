@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use Illuminate\Database\Seeder;
 use Sorethea\Restaurant\Models\Category;
 use Sorethea\Restaurant\Models\Cuisine;
+use Sorethea\Restaurant\Models\PriceGroup;
 use Sorethea\Restaurant\Models\Restaurant;
 
 class RestaurantSeeder extends Seeder
@@ -52,6 +53,10 @@ class RestaurantSeeder extends Seeder
 
         $c=1;
         $r=1;
+        PriceGroup::factory(1)->create([
+            "name"=>"Standard",
+            "is_default"=>true,
+        ]);
         foreach ($cuisines as $cuisineName=>$restaurants){
             Cuisine::factory(1)->create([
                 "id"=>$c,
