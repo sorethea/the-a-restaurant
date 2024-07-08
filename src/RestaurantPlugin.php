@@ -21,10 +21,9 @@ class RestaurantPlugin implements Plugin
     public function register(Panel $panel): void
     {
         $panel->resources([
-            BranchResource::class,
-            PriceGroupResource::class,
             CategoryResource::class,
             CuisineResource::class,
+            PriceGroupResource::class,
             RestaurantResource::class,
         ]);
 
