@@ -42,6 +42,7 @@ class PosPanelProvider extends PanelProvider
             ->plugins([
                 RestaurantPlugin::make(),
             ])
+            ->default()
             ->pages([
                 PointOfSale::class
             ])
