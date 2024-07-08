@@ -26,6 +26,7 @@ class RestaurantServiceProvider extends PackageServiceProvider
         }
 
         $this->loadTranslationsFrom(__DIR__.'/../lang','restaurant');
+        $this->loadViewsFrom(__DIR__.'/../resources/views');
     }
 
     public function boot(): void
@@ -38,6 +39,6 @@ class RestaurantServiceProvider extends PackageServiceProvider
             __DIR__.'/../lang' => lang_path('restaurant'),
         ], 'restaurant-translations');
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views/filament/pages','restaurant');
+        $this->loadViewsFrom(__DIR__.'/../resources/views','restaurant');
     }
 }
