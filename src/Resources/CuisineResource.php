@@ -18,7 +18,7 @@ class CuisineResource extends Resource implements HasShieldPermissions
 
     public static function getNavigationIcon(): string
     {
-        return config("restaurant.icons.cuisine");
+        return "gmdi-restaurant-menu";
     }
 
     public static function form(Form $form): Form
