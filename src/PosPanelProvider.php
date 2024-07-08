@@ -27,7 +27,6 @@ class PosPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->spa()
             ->id('pos')
             ->path('pos')
             ->plugins([
