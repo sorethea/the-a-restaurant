@@ -4,6 +4,7 @@ namespace Sorethea\Restaurant;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Sorethea\Restaurant\Pages\PointOfSale;
 use Sorethea\Restaurant\Resources\BranchResource;
 use Sorethea\Restaurant\Resources\CategoryResource;
 use Sorethea\Restaurant\Resources\CuisineResource;
@@ -25,6 +26,10 @@ class RestaurantPlugin implements Plugin
             CuisineResource::class,
             PriceGroupResource::class,
             RestaurantResource::class,
+        ]);
+
+        $panel->pages([
+            PointOfSale::class,
         ]);
 
     }
