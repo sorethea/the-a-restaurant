@@ -10,5 +10,5 @@ class PointOfSale extends Page
 
     protected static string $view = 'restaurant::filament.pages.point-of-sale';
 
-    protected static bool $shouldRegisterNavigation = false;
+
 }

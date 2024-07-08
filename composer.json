@@ -16,7 +16,8 @@
         "laravel": {
             "providers": [
                 "Sorethea\\Restaurant\\AuthRestaurantServiceProvider",
-                "Sorethea\\Restaurant\\RestaurantServiceProvider"
+                "Sorethea\\Restaurant\\RestaurantServiceProvider",
+                "Sorethea\\Restaurant\\PosPanelProvider"
             ]
         }
     },

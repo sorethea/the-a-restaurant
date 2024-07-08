@@ -28,9 +28,6 @@ class RestaurantPlugin implements Plugin
             RestaurantResource::class,
         ]);
 
-        $panel->pages([
-            PointOfSale::class,
-        ]);
 
     }
 
