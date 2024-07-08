@@ -26,7 +26,7 @@ class RestaurantServiceProvider extends PackageServiceProvider
         }
 
         $this->loadTranslationsFrom(__DIR__.'/../lang','restaurant');
-        $this->loadViewsFrom(__DIR__.'/../resources/views');
+        $this->loadViewsFrom(__DIR__.'/../resources/views','restaurant');
     }
 
     public function boot(): void
