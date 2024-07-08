@@ -37,5 +37,7 @@ class RestaurantServiceProvider extends PackageServiceProvider
         $this->publishes([
             __DIR__.'/../lang' => lang_path('restaurant'),
         ], 'restaurant-translations');
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views/filament/pages','restaurant');
     }
 }
