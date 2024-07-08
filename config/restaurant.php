@@ -3,7 +3,7 @@ return [
     "icons"=>[
         "restaurant"=>"heroicon-o-building-office",
         "cuisine"=>"heroicon-o-bars-4",
-        "category"=>"gmti-category",
+        "category"=>"gmdi-category",
         "price"=>"heroicon-o-currency-dollar",
     ]
 ];
