@@ -4,8 +4,10 @@ namespace Sorethea\Restaurant;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Sorethea\Restaurant\Resources\BranchResource;
 use Sorethea\Restaurant\Resources\CategoryResource;
 use Sorethea\Restaurant\Resources\CuisineResource;
+use Sorethea\Restaurant\Resources\PriceGroupResource;
 use Sorethea\Restaurant\Resources\RestaurantResource;
 
 class RestaurantPlugin implements Plugin
@@ -19,6 +21,8 @@ class RestaurantPlugin implements Plugin
     public function register(Panel $panel): void
     {
         $panel->resources([
+            BranchResource::class,
+            PriceGroupResource::class,
             CategoryResource::class,
             CuisineResource::class,
             RestaurantResource::class,

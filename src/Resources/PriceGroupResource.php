@@ -98,6 +98,6 @@ class PriceGroupResource extends Resource implements HasShieldPermissions
 
     public static function getNavigationIcon(): string
     {
-        return config("restaurant.icons.price");
+        return "gmdi-currency-exchange-o";
     }
 }

@@ -4,6 +4,7 @@ namespace Sorethea\Restaurant\Resources;
 
 use App\Filament\Resources\BranchResource\Pages;
 use App\Filament\Resources\BranchResource\RelationManagers;
+use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -11,7 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Sorethea\Restaurant\Models\Branch;
 
-class BranchResource extends Resource
+class BranchResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = Branch::class;
 
@@ -60,6 +61,18 @@ class BranchResource extends Resource
             'index' => \Sorethea\Restaurant\Resources\BranchResource\Pages\ListBranches::route('/'),
             'create' => \Sorethea\Restaurant\Resources\BranchResource\Pages\CreateBranch::route('/create'),
             'edit' => \Sorethea\Restaurant\Resources\BranchResource\Pages\EditBranch::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getPermissionPrefixes(): array
+    {
+        return [
+            'view',
+            'view_any',
+            'create',
+            'update',
+            'delete',
+            'delete_any',
         ];
     }
 }
