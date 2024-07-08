@@ -19,7 +19,7 @@ class CategoryResource extends Resource implements HasShieldPermissions
 
     public static function getNavigationIcon(): string
     {
-        return "gmdi-category";
+        return "gmdi-category-o";
     }
 
     public static function form(Form $form): Form
