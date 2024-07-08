@@ -16,7 +16,7 @@ class BranchResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = Branch::class;
 
-    protected static ?string $navigationIcon = 'gmdi-brand-family';
+    protected static ?string $navigationIcon = 'gmdi-branding-watermark';
 
     public static function form(Form $form): Form
     {
