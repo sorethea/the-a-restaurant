@@ -30,6 +30,9 @@ class PosPanelProvider extends PanelProvider
             ->spa()
             ->id('pos')
             ->path('pos')
+            ->plugins([
+                RestaurantPlugin::make(),
+            ])
             ->pages([
                 PointOfSale::class
             ]);
